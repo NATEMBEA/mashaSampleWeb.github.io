@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Medical Consultants | Dr. Masha, Dr. Tsofa & Dr. Chapaa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(56,182,255,0.8) 0%, rgba(0,119,182,0.9) 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .nav-link:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #38b6ff;
+            transition: width .3s;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .appointment-form {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white py-2 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-2 md:mb-0">
+                <div class="flex items-center">
+                    <i class="fas fa-phone-alt mr-2 text-blue-300"></i>
+                    <a href="tel:+254750450254" class="hover:text-blue-300">+254 750 450254</a>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-envelope mr-2 text-blue-300"></i>
+                    <a href="mailto:manfredoku@gmail.com" class="hover:text-blue-300">manfredoku@gmail.com</a>
+                </div>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="mr-2">
+                        <i class="fas fa-heartbeat text-3xl text-blue-600"></i>
+                    </div>
+                    <a href="#" class="text-2xl font-bold text-blue-900">Elite<span class="text-blue-600">Med</span></a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-blue-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-blue-900 font-medium">Home</a>
+                    <a href="#doctors" class="nav-link text-blue-900 font-medium">Our Doctors</a>
+                    <a href="#services" class="nav-link text-blue-900 font-medium">Services</a>
+                    <a href="#about" class="nav-link text-blue-900 font-medium">About</a>
+                    <a href="#contact" class="nav-link text-blue-900 font-medium">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="#appointment" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all">Book Appointment</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-2">
+                <a href="#home" class="block py-2 px-4 hover:bg-blue-50 rounded">Home</a>
+                <a href="#doctors" class="block py-2 px-4 hover:bg-blue-50 rounded">Our Doctors</a>
+                <a href="#services" class="block py-2 px-4 hover:bg-blue-50 rounded">Services</a>
+                <a href="#about" class="block py-2 px-4 hover:bg-blue-50 rounded">About</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-blue-50 rounded">Contact</a>
+                <a href="#appointment" class="block mt-2 bg-blue-600 text-white text-center py-2 px-4 rounded-full">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Expert MedicalResearch Care You Can Trust</h1>
+                <p class="text-xl mb-8 opacity-90">Our team of highly qualified specialists - Dr. Masha, Dr. Tsofa, and Dr. Chapaa - provide comprehensive healthcare services with compassion and excellence.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#appointment" class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full font-bold text-center transition-all">Book Appointment</a>
+                    <a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-full font-bold text-center transition-all">Our Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="img/group.jpg" alt="Doctors team" class="rounded-lg shadow-2xl max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">15+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">10K+</div>
+                    <div class="text-gray-600">Patients Served</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">3</div>
+                    <div class="text-gray-600">Specialist Doctors</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">24/7</div>
+                    <div class="text-gray-600">Emergency Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Doctors -->
+    <section id="doctors" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Meet Our Specialist Doctors</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Our team of board-certified physicians brings together decades of combined experience to provide you with the highest quality care.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dr. Masha -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/masha1.jpg" alt="Dr. Masha" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-900">Dr. Masha</h3>
+                                <p class="text-blue-600">Postdoctoral Researcher</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4">My broad research interest is on reproductive health, with a keen interest on the epidemiology of sexually transmitted infections including HIV, family planning, use of molecular tools to better understand host-pathogen interactions, and anti-microbial resistance.</p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="fas fa-graduation-cap mr-2 text-blue-500"></i>
+                                <span>
+Ghent University
+Ghent University
+PhD Health Sciences, Microbiology, Epidemiology</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-award mr-2 text-blue-500"></i>
+                                <span>PhD Health Sciences, Microbiology, Epidemiology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dr. Tsofa -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Dr. Tsofa" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-900">Dr. Tsofa</h3>
+                                <p class="text-blue-600">Associate Professor. Health Policy and Systems Specialist</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4">Prof. Benjamin Tsofa is a Senior Principal Research Scientist, Health Policy & Systems Research, and former Centre Director of the KEMRI – Centre for Geographic Medicine Research – Coast. He holds a Bachelor of Dental Surgery degree from the University of Nairobi; and and a PGD, MSc and DrPH from the London School of Hygiene and Tropical Medicine. His research work focuses on applying systems thinking approaches and theories in examining various aspects of the organisation and functioning of health systems, including on health system governance, health financing, human resources for health, and service delivery systems; to tackle current (and future) health system challenges - focusing on national, sub-national, service delivery (facility) and community levels in Kenya and across various countries in the African region. He also works on applying various policy analysis and political economy theories in examining health policy design and implementation; and on policy engagement and knowledge translation for supporting evidence use in health system decision making.
+
+He currently leads the Health Policy and Systems Research Group, at the KEMRI-Wellcome Trust Research Programme; and is Head of the Health Systems PhD Training Program at the KEMRI Graduate School. He holds various Visiting and/or Adjunct Associate Professorship positions including, at the KEMRI Graduate School - Nairobi, Pwani University – Kilifi, and Strathmore University - Nariobi, and a visiting Teaching Fellow at Oxford University. He serves in several Technical Advisory Committees and Technical Working Groups, at the National Ministry of Health in Kenya, to support to various health system strengthening initiatives; and across other countries in the region, with the WHO Regional Office for Africa (WHO-AFRO)</p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="fas fa-graduation-cap mr-2 text-blue-500"></i>
+                                <span>
+University of London
+Doctor of Public Health, Public Health Systems and Policy</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-award mr-2 text-blue-500"></i>
+                                <span>
+University of London
+MSc in Public Health, Health Systems and Health Policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dr. Chapaa -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/chapa1.jpg" alt="Dr. Chapaa" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-blue-900">Dr. Chapaa</h3>
+                                <p class="text-blue-600">Research Scientist with interests in impacts of climate change on public health.</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4">As a Research Scientist and Project Manager at Emory University, Moses leads and coordinates research projects that aim to understand and reduce the transmission of infectious diseases in different settings and populations. He has more than 14 years of international experience in public health, data analysis, and scientific communication, and holds a PhD in Public Health of Infectious Diseases from The Open University.
+
+Moses is passionate about using empirical data to guide the design and execution of programs that offer solutions to challenges in human health, sanitation, and poverty. He is currently involved in multi-country projects that characterize social contact patterns in workplaces, schools, and households in the USA, Mozambique, Guatemala, India, and Pakistan. These data will be useful to inform and evaluate new and better interventions against disease spread. He also has experience in teaching infectious disease dynamics at the postgraduate level and is an active member of the Rotary Club of Kilifi.</p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="fas fa-graduation-cap mr-2 text-blue-500"></i>
+                                <span>
+The Open University
+The Open University
+Doctor of Philosophy (PhD), Social Networks and Epidemiology of Infectious Diseases</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-award mr-2 text-blue-500"></i>
+                                <span>
+Doctor of Philosophy (PhD), Social Networks and Epidemiology of Infectious Diseases</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Medical Services</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Comprehensive healthcare services tailored to meet your individual needs with the latest medical technologies.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 transition-all card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heartbeat text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Sexual and Reproductive Health</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive STI screening, treatment & counseling
+
+HIV testing, care, and prevention strategies (including PrEP and PEP)
+
+Cervical cancer screening (Pap smears & HPV testing)
+
+Adolescent-friendly reproductive health services</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Family Planning & Contraceptive Services</h3>
+                    <p class="text-gray-600 mb-4">Personalized family planning counseling
+
+Short-term and long-term contraceptive methods (pills, injections, implants, IUDs)
+
+Fertility evaluation and support services</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bone text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Infectious Disease & Epidemiology Support</h3>
+                    <p class="text-gray-600 mb-4">Clinical management of sexually transmitted infections (STIs)
+
+Surveillance and epidemiological assessment of STIs and HIV
+
+Education and community outreach programs</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-lungs text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Pulmonology</h3>
+                    <p class="text-gray-600 mb-4">Diagnosis and treatment of respiratory system disorders including asthma, COPD, and sleep apnea.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-procedures text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">General Surgery</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive surgical services including minimally invasive procedures for various conditions.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 transition-all card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-md text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Internal Medicine</h3>
+                    <p class="text-gray-600 mb-4">Primary care for adults focusing on prevention, diagnosis, and treatment of complex diseases.</p>
+                    <a href="#" class="text-blue-600 font-medium inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Why Choose Our Medical Consultants?</h2>
+                    <p class="text-gray-600 mb-8">Our practice combines medical expertise with compassionate care to provide you with the best possible healthcare experience.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-blue-900">Board Certified Specialists</h3>
+                                <p class="text-gray-600">All our physicians are board-certified in their respective specialties with extensive training.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-blue-900">Personalized Care</h3>
+                                <p class="text-gray-600">We take time to understand your unique health needs and develop customized treatment plans.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-blue-900">Advanced Technology</h3>
+                                <p class="text-gray-600">Our facility is equipped with state-of-the-art diagnostic and treatment technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Medical equipment" class="w-full h-64 object-cover">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Our Commitment to Excellence</h3>
+                            <p class="text-gray-600 mb-6">We are dedicated to providing the highest standard of medical care through continuous education, research, and adoption of best practices in medicine.</p>
+                            <a href="#about" class="inline-flex items-center text-blue-600 font-medium">
+                                Learn more about our practice
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">What Our Patients Say</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Hear from patients who have experienced our exceptional care and service.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Patient" class="w-12 h-12 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-blue-900">Sarah K.</h4>
+                            <p class="text-sm text-gray-500">Cardiology Patient</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Dr. Masha saved my life with his quick diagnosis of my heart condition. His expertise and bedside manner are exceptional."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Patient" class="w-12 h-12 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-blue-900">James M.</h4>
+                            <p class="text-sm text-gray-500">Neurology Patient</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"After suffering from chronic migraines for years, Dr. Tsofa developed a treatment plan that finally gave me relief. I'm forever grateful."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Patient" class="w-12 h-12 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-blue-900">Grace W.</h4>
+                            <p class="text-sm text-gray-500">Orthopedics Patient</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Dr. Chapaa performed my knee replacement surgery and the results have been amazing. I'm back to hiking and living pain-free!"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment -->
+    <section id="appointment" class="py-20 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Schedule Your Appointment</h2>
+                    <p class="text-blue-100 mb-8">We're here to help you with your healthcare needs. Book an appointment with one of our specialists today.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt text-blue-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold">Call Us</h3>
+                                <a href="tel:+254750450254" class="text-blue-300 hover:text-white">+254 750 450254</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope text-blue-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold">Email Us</h3>
+                                <a href="mailto:manfredoku@gmail.com" class="text-blue-300 hover:text-white">manfredoku@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-blue-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold">Visit Us</h3>
+                                <p class="text-blue-300">kiwandani<br>kilifi north, Kenya</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-clock text-blue-300"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-bold">Working Hours</h3>
+                                <p class="text-blue-300">
+                                    Monday - Friday: 8:00 AM - 5:00 PM<br>
+                                    Saturday: 9:00 AM - 1:00 PM<br>
+                                    Emergency Services: 24/7
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="appointment-form rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Book Online</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="doctor" class="block text-gray-700 font-medium mb-2">Select Doctor</label>
+                                    <select id="doctor" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Choose a doctor</option>
+                                        <option value="Dr. Masha">Dr. Masha - ...</option>
+                                        <option value="Dr. Tsofa">Dr. Tsofa - ...</option>
+                                        <option value="Dr. Chapaa">Dr. Chapaa - ...</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="date" class="block text-gray-700 font-medium mb-2">Appointment Date</label>
+                                    <input type="date" id="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-all">Book Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Medical team" class="rounded-lg shadow-xl w-full">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">About Elite Medical Consultants</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2010, Elite Medical Consultants has grown to become a leading provider of specialized medical care in Kenya. Our practice brings together three of the nation's top specialists to offer comprehensive healthcare under one roof.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Our Mission</h3>
+                        <p class="text-gray-600">To provide exceptional, patient-centered medical care through expertise, innovation, and compassion. We are committed to improving the health and well-being of our community.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Our Values</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-heart text-blue-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-blue-900">Compassion</h4>
+                                    <p class="text-gray-600 text-sm">Treating every patient with empathy and respect</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-flask text-blue-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-blue-900">Excellence</h4>
+                                    <p class="text-gray-600 text-sm">Delivering the highest standard of medical care</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-users text-blue-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-blue-900">Teamwork</h4>
+                                    <p class="text-gray-600 text-sm">Collaborating for comprehensive patient care</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-lightbulb text-blue-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold text-blue-900">Innovation</h4>
+                                    <p class="text-gray-600 text-sm">Embracing advanced medical technologies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#doctors" class="inline-flex items-center text-blue-600 font-medium">
+                        Meet our specialists
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">We're here to answer your questions and address your healthcare concerns. Reach out to us today.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-blue-900 mb-3">Our Location</h3>
+                    <p class="text-gray-600 text-center">kiwandani<br>kilifi north, Kenya</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-phone-alt text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-blue-900 mb-3">Phone & Email</h3>
+                    <p class="text-gray-600 text-center mb-2">
+                        <a href="tel:+254750450254" class="hover:text-blue-600">+254 750 450254</a>
+                    </p>
+                    <p class="text-gray-600 text-center">
+                        <a href="mailto:manfredoku@gmail.com" class="hover:text-blue-600">manfredoku@gmail.com</a>
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-clock text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-blue-900 mb-3">Working Hours</h3>
+                    <p class="text-gray-600 text-center">
+                        Monday - Friday: 8:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 1:00 PM<br>
+                        Emergency Services: 24/7
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-12">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="contact-name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="contact-subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="contact-message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-all">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="hidden lg:block">
+                        <div class="h-full w-full">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.609747979401!2d39.84503507499391!3d-3.6260022432357405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18158fb4f7386e3b%3A0x2d5bde49b78ebf45!2sKiwandani%2C%20Kilifi!5e0!3m2!1sen!2ske!4v1718728311223!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="mr-2">
+                            <i class="fas fa-heartbeat text-3xl text-blue-300"></i>
+                        </div>
+                        <a href="#" class="text-2xl font-bold text-white">Elite<span class="text-blue-300">Med</span></a>
+                    </div>
+                    <p class="text-blue-200 mb-4">Providing exceptional medical care through expertise, innovation, and compassion.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="#doctors" class="text-blue-200 hover:text-white">Our Doctors</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white">Services</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Cardiology</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Neurology</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Orthopedics</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Pulmonology</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">General Surgery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <ul class="space-y-3 text-blue-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Nairobi Medical Plaza, Westlands, Nairobi, Kenya</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <a href="tel:+254750450254" class="hover:text-white">+254 750 450254</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <a href="mailto:manfredoku@gmail.com" class="hover:text-white">manfredoku@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3"></i>
+                            <span>Mon-Fri: 8AM-5PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-blue-800 text-center text-blue-200">
+                <p>&copy; 2023 Elite Medical Consultants. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open 
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
